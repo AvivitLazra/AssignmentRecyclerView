@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- Full-size Image -->
+    <ImageView
+        android:id="@+id/dialogImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"/>
+
+    <!-- Character Name -->
+    <TextView
+        android:id="@+id/dialogCharacterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Character Name"
+        android:textSize="24sp"
+        android:textColor="#F9A825"
+        android:gravity="center"/>
+
+    <!-- Character Description -->
+    <TextView
+        android:id="@+id/dialogCharacterDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Character Description"
+        android:textSize="18sp"
+        android:textColor="#424242"
+        android:gravity="center"/>
+</LinearLayout>
