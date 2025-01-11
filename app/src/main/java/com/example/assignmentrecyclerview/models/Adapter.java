@@ -1,6 +1,9 @@
 package com.example.assignmentrecyclerview.models;
 
+import android.app.Dialog;
 import android.provider.ContactsContract;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +60,27 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         textViewCName.setText(dataSet.get(position).getcName());
         textViewCDesc.setText(dataSet.get(position).getcDesc());
         imageCharacterImage.setImageResource(dataSet.get(position).getImage());
+        imageCharacterImage.setTag(dataSet.get(position).getImage());
+
+        holder.itemView.setOnClickListener(v -> {
+            Dialog dialog = new Dialog(v.getContext());
+            Log.d("tag","CLICKING THE CARD");
+            dialog.setContentView(R.layout.popuplayout);
+            dialog.getWindow().setLayout(android.view.WindowManager.LayoutParams.MATCH_PARENT, android.view.WindowManager.LayoutParams.MATCH_PARENT);
+            dialog.getWindow().setGravity(Gravity.CENTER);
+
+            ImageView imageView = dialog.findViewById(R.id.dialogImage);
+            imageView.setImageResource(dataSet.get(position).getImage());
+            TextView textName = dialog.findViewById(R.id.dialogCharacterName);
+            textName.setText(dataSet.get(position).getcName());
+
+            TextView textDescription = dialog.findViewById(R.id.dialogCharacterDescription);
+            textDescription.setText(dataSet.get(position).getcDesc());
+
+            dialog.show();
+
+
+        });
     }
 
     @Override
